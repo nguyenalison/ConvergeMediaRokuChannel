@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2016 Roku Corp.  All Rights Reserved. -->
+
+<component name="NavigationBar" extends="Group" initialFocus="Home">
+
+  <children>
+    <!--Navigation Bar-->
+    <Rectangle 
+        id = "navContainer" 
+        color = "0x00000" 
+        width="1920"
+        height="150"
+        translation="[0,0]"
+        />
+    <Group
+        id = "NavBar">
+      <Poster
+        id="logo"
+        uri="pkg:/images\navbar-logo.png"
+        translation="[10,50]" />
+      <LabelList
+          id = "Home"
+          translation = "[390,50]"
+          itemSize = "[140,50]"
+          font = "font:LargeBoldSystemFont"
+          focusedFont="font:LargeBoldSystemFont"
+          textHorizAlign = "center"
+          focusBitmapBlendColor="0x000000"
+          color="0xffffff">
+        <ContentNode id = "HomeNode" role = "content" >
+          <ContentNode title = "Home"/>
+        </ContentNode>
+      </LabelList>
+      <LabelList
+          id = "Show"
+          translation = "[595,50]"
+          itemSize = "[150,50]"
+          font = "font:LargeBoldSystemFont"
+          focusedFont="font:LargeBoldSystemFont"
+          textHorizAlign = "center"
+          focusBitmapBlendColor="0x000000"
+          color="0xffffff">
+        <ContentNode id = "ShowNode" role = "content" >
+          <ContentNode title = "Shows"/>
+        </ContentNode>
+      </LabelList>
+      <LabelList
+          id = "Film"
+          translation = "[810,50]"
+          itemSize = "[140,50]"
+          font = "font:LargeBoldSystemFont"
+          focusedFont="font:LargeBoldSystemFont"
+          textHorizAlign = "center"
+          focusBitmapBlendColor="0x000000"
+          color="0xffffff">
+        <ContentNode id = "FilmsNode" role = "content" >
+          <ContentNode title = "Films"/>
+        </ContentNode>
+      </LabelList>
+       <LabelList
+          id = "About"
+          translation = "[1015,50]"
+          itemSize = "[230,50]"
+          font = "font:LargeBoldSystemFont"
+          focusedFont="font:LargeBoldSystemFont"
+          textHorizAlign = "center"
+          focusBitmapBlendColor="0x000000"
+          color="0xffffff">
+        <ContentNode id = "AboutNode" role = "content" >
+          <ContentNode title = "About Us"/>
+        </ContentNode>
+      </LabelList>  
+    </Group> 
+      <Rectangle 
+        color = "0x00000" 
+        width="800"
+        height="150"
+        translation="[1280,0]"
+        />
+  </children>
+
+  <script type="text/brightscript" uri="pkg:/components/NavigationBar/NavigationBar.brs" />
+
+</component>

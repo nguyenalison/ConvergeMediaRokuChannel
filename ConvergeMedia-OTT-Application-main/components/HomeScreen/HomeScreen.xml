@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2016 Roku Corp.  All Rights Reserved. -->
+
+<component name="HomeScreen" extends="Group" initialFocus="itemMask">
+
+  <children>
+
+    <!-- For transition animation
+    <FadingBackground
+      id="Background"
+      width="1920"
+      height="1080"
+      color="0x000000"
+      ShadeOpacity="0.9" /> -->
+
+  </children>
+
+  <script type="text/brightscript" uri="pkg:/components/HomeScreen/HomeScreen.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/ScreenStackLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/ContentTaskLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/GridScreenLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/RenderScreen.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/VideoPlayerLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/DetailsScreenLogic.brs" />
+
+
+</component>

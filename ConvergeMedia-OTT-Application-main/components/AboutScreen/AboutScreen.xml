@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2016 Roku Corp.  All Rights Reserved. -->
+
+<component name="AboutScreen" extends="Group" initialFocus="itemMask">
+  <children>
+
+    <!-- For transition animation -->
+    <FadingBackground
+      id="Background"
+      width="1920"
+      height="1080"
+      color="0x000000"
+      ShadeOpacity="1.0" />
+
+      <Poster 
+        id="intro_picture" 
+        uri="pkg:/images/about_background.jpg" 
+        width = "1920" 
+        height = "1045" 
+        translation="[0,0]" 
+        opacity="0.2" />
+
+      <Group>
+        <Label 
+          id="texta1" 
+          text="CHANGING THE NARRATIVE" 
+          font = "font:LargeBoldSystemFont" 
+          translation = "[630,100]" />
+        <Label 
+          id="texta2" 
+          text="Content and local news specifically for the Northwest’s Black community." 
+          translation="[350,250]" />
+        <Label 
+          id="texta3" 
+          text="We believe that the Black community deserves authentic representation," 
+          translation="[350,300]" />
+        <Label 
+          id="texta4" 
+          text="a focus on our community’s issues, and equitable access to elected officials," 
+          translation="[350,350]" />
+        <Label 
+          id="texta5" 
+          text="leadership, and governmental information." 
+          translation = "[350,400]" />
+      </Group>
+
+      <Group>
+        <Label 
+          id="texta6" 
+          text="Learn More" 
+          font="font:MediumBoldSystemFont" 
+          opacity="0.5"
+          translation = "[350,500]" />
+        <Label 
+          id="texta7" 
+          text="Support Us" 
+          font="font:MediumBoldSystemFont" 
+          opacity="0.5"
+          translation = "[830,500]" />
+        <Label 
+          id="texta8" 
+          text="Find Us" 
+          font="font:MediumBoldSystemFont" 
+          opacity="0.5"
+          translation = "[1380,500]" />
+      </Group>
+
+      <Group>
+        <Poster 
+          id="learn_more" 
+          uri="pkg:/images/about_learn_more.png" 
+          width = "210" 
+          height = "210" 
+          translation="[350,570]" />
+
+        <Poster 
+          id="support_us" 
+          uri="pkg:/images/about_support_us.png" 
+          width = "210" 
+          height = "210" 
+          translation="[830,570]" />
+      </Group>
+
+      <Group>
+        <Poster 
+          id="find_us_ins" 
+          uri="pkg:/images/about_find_us_ins.png" 
+          width = "55" 
+          height = "55" 
+          translation="[1300,570]" />
+        
+        <Poster 
+          id="find_us_youtube" 
+          uri="pkg:/images/about_find_us_youtube.png" 
+          width = "55" 
+          height = "55" 
+          translation="[1300,650]" />
+        
+        <Poster 
+          id="find_us_twitter" 
+          uri="pkg:/images/about_find_us_twitter.png" 
+          width = "50" 
+          height = "50" 
+          translation="[1302,730]" />
+      </Group>
+
+      <Group>
+        <Label 
+          id="text_find_us_ins" 
+          text="@wwconverge" 
+          opacity="0.7"
+          translation = "[1370,580]" />
+        <Label 
+          id="text_find_us_youtube" 
+          text="@ConvergeMedia" 
+          opacity="0.7"
+          translation = "[1370,660]" />
+        <Label 
+          id="text_find_us_twitter" 
+          text="@WWConverge"
+          opacity="0.7"
+          translation = "[1370,740]" />
+      </Group>
+  </children>
+
+  <script type="text/brightscript" uri="pkg:/components/AboutScreen/AboutScreen.brs" />
+
+</component>

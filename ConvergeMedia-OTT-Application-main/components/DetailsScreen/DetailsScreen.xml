@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<component name="DetailsScreen" extends="Group" initialFocus="Buttons">
+    <script type="text/brightscript" uri="DetailsScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+    <interface>
+        <!-- Content fields -->
+        <field id="content" type="node" />
+        <!-- @WriteOnly  -->
+        <!-- Manually focus on desired item. This field must be set after setting the content field. -->
+        <field id="jumpToItem" type="integer" onChange="OnJumpToItem" value="0" alwaysNotify="true" />
+        <!-- tells what item is currently focused  -->
+        <field id="itemFocused" type="integer" alwaysNotify="true" />
+        <field id="buttonSelected" type="integer" alias="buttons.itemSelected" />
+    </interface>
+    <children>
+
+
+        <Poster
+            id="poster"
+            width="1920"
+            loadWidth="1080"
+            height="1080"
+            loadHeight="720"
+            loadDisplayMode="scaleToFill"
+            translation="[2,115]"
+        />
+        <Rectangle
+            id="shader"
+            width="1920"
+            height="1080"
+            color="0x000000FF"
+            opacity="0.8"
+            translation="[2,115]"
+        />
+        <LayoutGroup
+            translation="[1200, 354]"
+            layoutDirection="horiz"
+            horizAlignment="right"
+            itemSpacings="[40]">
+            <LayoutGroup
+                itemSpacings="[14, 10]"
+                layoutDirection="vert">
+                <Rectangle
+                    width="357"
+                    height="201"
+                    color="0xFFFFFF00">
+                    <Poster
+                        id="poster_1"
+                        width="450"
+                        loadWidth="450"
+                        height="300"
+                        loadHeight="300"
+                        loadDisplayMode="scaleToFit"
+                    />
+                </Rectangle>
+                <!-- <Label
+                    id="titleLabel"
+                    width="357"
+                    wrap="false"
+                    horizAlign="right"
+                /> -->
+
+            </LayoutGroup>
+            <Group>
+                <Label
+                    id="titleLabel"
+                    horizAlign="right"
+                />
+
+                <LayoutGroup
+                    itemSpacings="[10]"
+                    translation="[0, 108]">
+                    <Group>
+                    <Label
+                        id="timeLabel"
+                        width="357"
+                        wrap="false"
+                        horizAlign="right"
+                        translation= "[100,108]"
+                    />
+                    <Label
+                        id="releaseLabel"
+                        wrap="false"
+                        width="520"
+                        translation = " [105,108]"
+                    /></Group>
+                    
+                    <LabelList
+                        id="buttons"
+                        numRows="3"
+                        itemSpacing="[0,20]"
+                        focusBitmapUri = "https://htmlcolorcodes.com/assets/images/colors/bright-blue-color-solid-background-1920x1080.png"
+                        itemSize="[593, 48]"
+                    />
+
+                </LayoutGroup>
+            </Group>
+            
+        </LayoutGroup>
+        <Label 
+            id = "overviewLabel"
+            text = "Overview"
+           
+            
+            font = "font:LargeBoldSystemFont"
+            translation = "[100,690]"
+        />
+        
+        <!-- <Label
+            id="descriptionLabel"
+            height="950"
+            width="1000"
+            
+            translation="[100,750]"
+            wrap="true" /> -->
+            <ScrollableText
+        		id="descriptionLabel"
+        		
+        		color="0xFFFFFF"
+        		width="1920"
+				height="460"
+        		
+				lineSpacing="5.0"
+        		translation="[70,750]" />
+    </children>
+</component>

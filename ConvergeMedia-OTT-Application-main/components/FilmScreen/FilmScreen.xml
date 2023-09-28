@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component name="FilmScreen" extends="Group" >
+    <script type="text/brightscript" uri="FilmScreen.brs" />
+    <script type="text/brightscript" uri="pkg:/source/utils.brs" />
+	<interface>
+        <!-- Specifies the content for the Grid -->
+        <field id="content" type="node" alias="RowList.content" />
+        <field id="rowItemSelected" type="intarray" alwaysnotify="true" alias="RowList.rowItemSelected" />
+        <field id="jumpToRowItem" type="intarray" alias="RowList.jumpToRowItem" />
+    </interface>
+    <children>
+       
+        <RowList
+            itemComponentName="RowListItemComponent"
+            id="rowList"
+            translation="[50,200]"
+            numRows="5"
+            rowItemSize="[[400,230]]"
+            rowItemSpacing="[[30,0]]"
+            rowHeights="[438]"
+            itemSize="[1980,400]"
+            rowLabelOffset="[[20,20]]"
+            focusXOffset="[20]"
+            showRowLabel="[true]"
+            rowFocusAnimationStyle="floatingFocus"
+            >  
+            </RowList>
+            
+      
+        
+                <!-- Label with description of content.
+	         wrap="true" and numLines="3" means that the text can be broken into three lines -->
+                 <!-- Label with title and length of content -->
+         
+        <!-- Shaded Overhang to display the focused content in the RowList-->
+        <Rectangle
+        id = "Overhang"
+        height = "550"
+        width = "1920"
+        translation ="[2,580]"
+        color = "0x000000FF"
+        opacity = "0.5"
+        />
+                 <!-- Passed into a Group node to to make the formatting easier. All child nodes inherit the translation field of Group -->
+        <Group
+            translation = "[90,550]">
+        <!--  Content title of the item focused. This label inherits translation from Group node -->
+            <Label
+                id = "Title"
+                height = "30"
+                width = "650"
+                translation = "[0,90]"
+                font = "font:LargeBoldSystemFont"/>
+            <!-- Content description of the item focused . Also inherits translation from Group node -->
+            <Label
+                id = "Description"
+                height = "250"
+                width = "800"
+                color = "0xA3A3C2FF"
+                translation = "[0,150]"
+                wrap = "true"/>
+            <!-- Artwork of the item focused. Inherits translation of the Group node and adds onto the translation. Final translation on the screen is [150+850, 75+10] -->
+            <Poster
+                id = "poster"
+                height = "381"
+                width = "700"
+                loadWidth = "600"
+                loadHeight = "381"
+                loadDisplayMode = "scaleToFit"
+                translation = "[1050,85]"/>
+            </Group>
+    </children>
+</component>

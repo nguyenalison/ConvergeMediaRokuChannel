@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--********** Copyright 2020 Roku Corp.  All Rights Reserved. **********-->
+
+<component name="GridScreen" extends="Group">
+    <script type="text/brightscript" uri="GridScreen.brs" />
+	 <interface>
+        <!-- Specifies the content for the Grid -->
+        <field id="content" type="node" alias="RowList.content" />
+        <field id="rowItemSelected" type="intarray" alwaysnotify="true" alias="RowList.rowItemSelected" />
+        <field id="jumpToRowItem" type="intarray" alias="RowList.jumpToRowItem" />
+    </interface>
+    <children>
+        <Rectangle
+        id="featuredBanner"
+        height = "300"
+        width = "1920"
+        translation ="[2,120]">
+        <Poster
+            id="featured"
+            uri="https://storageconverge.blob.core.windows.net/seriesbanners/featured-3.png"
+            height = "300"
+            width = "1920"
+        />
+        </Rectangle>
+
+        <RowList
+            itemComponentName="RowListItemComponent"
+            id="rowList"
+            translation="[50,450]"
+            numRows="5"
+            rowItemSize="[[400,230]]"
+            rowItemSpacing="[[20,0]]"
+            itemSize="[1980,400]"
+            rowLabelOffset="[[20,20]]"
+            focusXOffset="[20]"
+            showRowLabel="[true]"
+            rowFocusAnimationStyle="floatingFocus"
+            variableWidthItems="[true]"
+            font = "font:LargeBoldSystemFont" />
+
+        <Label
+        id="titleLabel"
+        width="2020"
+        vertAlign = "bottom"
+        translation="[60,750]"
+        font = "font:SmallestSystemFont" 
+        color = "#AEBCD6"
+        />
+
+        <Label
+	        id="descriptionLabel"
+	        wrap="true"
+	        width="1020"
+	        numLines="3"
+			translation="[130,220]"
+	    />
+    </children>
+</component> 

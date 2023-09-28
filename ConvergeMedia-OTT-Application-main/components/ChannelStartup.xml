@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2016 Roku Corp.  All Rights Reserved. -->
+<component name="ChannelStartup" extends="Scene" >
+  <children>
+    <NavigationBar
+      id = "NavBar"
+      visible = "true" />
+    <!-- HomeScreen on ChannelStartup -->
+    <HomeScreen
+      id="HomeScreen"
+      visible="true"
+      translation="[0,150]"/>
+    <!-- DetailsScreen on ChannelStartup -->
+    <DetailsScreen
+      id="DetailsScreen"
+      visible="false"
+      translation="[0,150]"/>
+    <!-- AboutScreen on ChannelStartup -->
+    <AboutScreen
+      id="AboutScreen"
+      visible="false"
+      translation="[0,150]"/>
+    <!-- AboutScreen on ChannelStartup -->
+    <FilmScreen
+      id="FilmScreen"
+      visible="false"
+      translation="[0,150]"/>
+    <!-- AboutScreen on ChannelStartup -->
+    <ShowScreen
+      id="ShowScreen"
+      visible="false"
+      translation="[0,150]"/>
+    <!-- Animation to fade the ScreenFade in/out -->
+    <ParallelAnimation id="FadeIn">
+      <Animation
+        id="HFadeOut"
+        duration=".4"
+        repeat="false"
+        easeFunction="inQuad">
+        <FloatFieldInterpolator
+          id="HFadeOutInterp"
+          key="[0,1]"
+          keyValue="[1.0, 0.0]"
+          fieldToInterp="HomeScreen.opacity"/>
+      </Animation>
+    </ParallelAnimation>
+    <!-- Animation to fade the ScreenFade in/out -->
+    <ParallelAnimation id="FadeOut">
+      <Animation
+        id="HFadeIn"
+        duration=".4"
+        repeat="false"
+        easeFunction="inQuad">
+        <FloatFieldInterpolator
+          id="HFadeInInterp"
+          key="[0,1]"
+          keyValue="[0.0, 1.0]"
+          fieldToInterp="HomeScreen.opacity"/>
+      </Animation>
+    </ParallelAnimation>
+  </children>
+  <script type="text/brightscript" uri="pkg:/components/ChannelStartup.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/ScreenStackLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/ContentTaskLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/GridScreenLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/RenderScreen.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/VideoPlayerLogic.brs" />
+  <script type="text/brightscript" uri="pkg:/components/UILogic/DetailsScreenLogic.brs" />
+
+</component>
